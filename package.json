@@ -1,0 +1,48 @@
+{
+  "name": "mg-line",
+  "description": "A lightweight, fast and counter-focused interface for the most basic magicline tasks like checkin-in, check-out and retail product sales.",
+  "keywords": [
+    "magicline",
+    "typescript",
+    "vue3",
+    "reverse-engineered"
+  ],
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "vaaski <admin@vaa.ski>",
+  "scripts": {
+    "start": "node -r dotenv/config lib",
+    "commit": "cz -S",
+    "back:build": "rimraf lib && tsc -p tsconfig.backend.json",
+    "back:dev": "nodemon",
+    "front:dev": "vite --port 8080",
+    "front:build": "vue-tsc --noEmit && vite build"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^16.4.5",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "@vitejs/plugin-vue": "^1.3.0",
+    "@vue/compiler-sfc": "^3.1.5",
+    "commitizen": "^4.2.2",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5",
+    "vite": "^2.4.4",
+    "vue-tsc": "^0.2.2"
+  },
+  "dependencies": {
+    "vue": "^3.1.5",
+    "vue-router": "^4.0.10"
+  }
+}
