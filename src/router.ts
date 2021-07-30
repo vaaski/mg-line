@@ -4,11 +4,16 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/home",
     name: "home",
-    component: () => import("./views/home.vue"),
+    component: () => import("./views/Home.vue"),
+  },
+  {
+    path: "/dash",
+    name: "dash",
+    component: () => import("./views/Dash.vue"),
   },
   {
     path: "/:pathMatch(.*)*",
-    redirect: "/home",
+    redirect: "/dash",
   },
 ]
 

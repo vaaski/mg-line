@@ -1,7 +1,5 @@
 <template>
-  <main>
-    <router-view></router-view>
-  </main>
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
@@ -11,3 +9,13 @@ export default defineComponent({
   setup() {},
 })
 </script>
+
+<style lang="scss">
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+</style>
