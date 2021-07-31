@@ -18,4 +18,17 @@ body,
   width: 100%;
   overflow: hidden;
 }
+
+* {
+  user-select: none;
+}
+
+input,
+button {
+  outline: none;
+
+  &:focus {
+    border: 1px solid black;
+  }
+}
 </style>

@@ -14,6 +14,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #f0f;
+  border: 1px solid #0ff;
 }
 </style>
