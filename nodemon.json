@@ -1,11 +1,13 @@
 {
-  "watch": [
-    "backend",
-    "types"
-  ],
+  "watch": ["backend", "types"],
   "ext": "ts, json",
   "exec": "npx ts-node ./backend/index.ts",
+  "env": {
+    "DEBUG": "mg-line*"
+  },
   "events": {
-    "start": "node -e console.clear()"
+    "start": "node -e console.clear()",
+    "restart": "kill-port 9865",
+    "crash": "kill-port 9865"
   }
 }

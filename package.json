@@ -23,6 +23,7 @@
     "lib/**/*"
   ],
   "devDependencies": {
+    "@types/debug": "^4.1.7",
     "@types/node": "^16.4.5",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
@@ -33,6 +34,7 @@
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "kill-port": "^1.6.1",
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
@@ -45,7 +47,10 @@
     "windicss": "^3.1.6"
   },
   "dependencies": {
+    "debug": "^4.3.2",
     "openmagicline": "file:../openmagicline",
+    "socket.io": "^4.1.3",
+    "socket.io-client": "^4.1.3",
     "vue": "^3.1.5",
     "vue-router": "^4.0.10"
   }
