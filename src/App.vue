@@ -73,6 +73,8 @@ body,
   height: 100%;
   width: 100%;
   overflow: hidden;
+  background: var(--clr-bg);
+  color: var(--clr-fg);
 }
 
 * {
@@ -81,10 +83,14 @@ body,
 
 input,
 button {
-  outline: none;
+  outline: none !important;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: border var(--transition-short);
 
   &:focus {
-    border: 1px solid black;
+    border: 1px solid var(--clr-fg-light);
+    outline: none !important;
   }
 }
 </style>

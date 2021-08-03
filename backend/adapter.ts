@@ -7,11 +7,21 @@ export default (io: BackendSocket, _log: Debugger): void => {
   const log = _log.extend("adapter")
 
   io.on("connect", (client: ContextClient) => {
+    //! this can probably be simplified since every client has its own closure
     const getInstance = (socket: typeof client, config?: OMGL.Config) => {
       if (socket.openmagicline) return socket.openmagicline
       if (!config) throw Error("no config provided")
       socket.openmagicline = new Openmagicline(config)
       return socket.openmagicline
+    }
+    let magicSocket: ReturnType<Openmagicline["socket"]>
+    const getSocket = async () => {
+      if (!magicSocket) {
+        // todo
+        const defaultUnit = await getInstance(client).util.getDefaultUnitID()
+        magicSocket = getInstance(client).socket(defaultUnit)
+      }
+      return magicSocket
     }
 
     client.on("getToken", async (config, reply) => {
@@ -37,7 +47,18 @@ export default (io: BackendSocket, _log: Debugger): void => {
     })
 
     client.on("checkin.list", async (options, reply) => {
+      log("checkin.list", options)
       reply(await getInstance(client).checkin.list(options))
+    })
+
+    client.on("onCheckin", async () => {
+      log("registering checkin handler")
+
+      const socket = await getSocket()
+      socket.onCheckin(() => {
+        log("checkin event")
+        client.emit("checkin")
+      })
     })
   })
 }

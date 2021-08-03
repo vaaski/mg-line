@@ -1,0 +1,22 @@
+/* ? base properties */
+:root {
+  --transition-short: 150ms;
+}
+
+/* ? light theme */
+:root {
+  --clr-bg: hsl(0, 0%, 95%);
+  --clr-bg-light: hsl(0, 0%, 0%, 0.02);
+
+  --clr-fg: hsl(0, 0%, 5%);
+  --clr-fg-light: hsla(0, 0%, 5%, 0.5);
+}
+
+/* ? dark theme */
+:root.dark {
+  --clr-bg: hsl(0, 0%, 2%);
+  --clr-bg-light: hsl(0, 0%, 100%, 0.03);
+
+  --clr-fg: hsl(0, 0%, 95%);
+  --clr-fg-light: hsl(0, 0%, 50%);
+}

@@ -12,6 +12,7 @@ export interface FrontendEmits {
     options: OMGL.Checkin.ListOptions,
     cb: Callback<Magicline.Checkin.CheckinList>
   ) => void
+  onCheckin: () => void
 }
 
 export interface BackendEmits {
@@ -25,4 +26,4 @@ export interface ContextClient extends Socket<FrontendEmits, BackendEmits> {
 export type BackendClient = Socket<BackendEmits, FrontendEmits>
 export type BackendSocket = Server<FrontendEmits, BackendEmits>
 
-export type FrontendSocket = SocketClient<BackendSocket, FrontendEmits>
+export type FrontendSocket = SocketClient<BackendEmits, FrontendEmits>
