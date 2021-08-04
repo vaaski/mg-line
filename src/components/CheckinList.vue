@@ -3,6 +3,7 @@ import type { FrontendSocket } from "$/socket"
 import type { Magicline } from "openmagicline"
 
 import { computed, inject, ref } from "vue"
+import SvgIcon from "./SvgIcon.vue"
 
 const socket = inject<FrontendSocket>("socket")
 if (!socket) throw new Error("socket injection failed")
@@ -25,7 +26,9 @@ const listRender = computed(() => checkins.value)
 <template>
   <ol class="checkin-list">
     <li v-for="checkin in listRender" :key="checkin.databaseId">
-      <button class="checkout">🚪</button>
+      <button class="checkout">
+        <SvgIcon name="logout" />
+      </button>
       <input type="text" placeholder="keine" v-model="checkin.lockerKey" />
       <div class="name-time">
         <h3 class="name">{{ checkin.firstname }} {{ checkin.lastname }}</h3>

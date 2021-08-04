@@ -93,4 +93,10 @@ button {
     outline: none !important;
   }
 }
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
